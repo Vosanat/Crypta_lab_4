@@ -212,7 +212,7 @@ public:
                  << " байт с этим ключом. Рекомендуется сменить ключ." << endl;
         }
         
-        // Шифрование по блокам
+        // Зашифрование по блокам
         for (size_t i = 0; i < padded.size(); i += BLOCK_SIZE) {
             word64 block = 0;
             for (size_t j = 0; j < BLOCK_SIZE; j++) {
@@ -229,7 +229,7 @@ public:
         return ciphertext;
     }
     
-    // Дешифрование данных
+    // Расшифрование данных
     bytearray decrypt(const bytearray& ciphertext) {
         if (ciphertext.size() % BLOCK_SIZE != 0) {
             throw runtime_error("Размер шифртекста должен быть кратен размеру блока");
